@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# 本地生成的简历产物
+/resume.json
+/简历*.docx
+/草稿*.md

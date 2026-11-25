@@ -1,0 +1,63 @@
+{
+  "skill_name": "resume-builder",
+  "evals": [
+    {
+      "id": 0,
+      "name": "fresh-grad-no-internship-jd",
+      "prompt": "帮我做一份简历吧，我要投这个 JD（jd_backend_intern.txt），我的情况都写在 notes_zhouziang.txt 里了，写得有点乱。最后给我 Word 文件。",
+      "expected_output": "一份针对后端实习岗的中文简历 docx：不出现任何实习经历（用户明确说没有），项目经历为主，技能按 JD 排序，量化数据保守且被点名说明",
+      "files": [
+        "evals/fixtures/jd_backend_intern.txt",
+        "evals/fixtures/notes_zhouziang.txt"
+      ],
+      "assertions": [
+        "交付了可打开的 .docx（内部含 word/document.xml）",
+        "模块标题是主题色 #1F3864 底纹的色块且带通栏浅灰细线",
+        "列表用 Word 原生项目符号（w:numPr）而非手写圆点，悬挂缩进 340 缇",
+        "存在给用户过目的内容草稿（draft.md 或等价物）",
+        "没有出现「实习经历」模块——用户明确说过没有实习",
+        "没有编造用户未提及的公司/机构名",
+        "技能模块第一条对应 JD 最看重的后端方向（含 Go 或 后端）",
+        "草稿里明确点出了哪些量化数据是估算的"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "restructure-old-resume",
+      "prompt": "old_resume_liuyang.docx 是我自己写的简历，太丑了，内容也全是废话。帮我重做一版，用我们之前定的那套版式——单栏、深蓝色斜切标题块那种，最后给我 Word。",
+      "expected_output": "把旧简历的空话 bullet 重写成「主题词+痛点+动作+结果」结构，套用固定版式输出 docx，未提供的量化数据保守估算并在草稿中列出",
+      "files": [
+        "evals/fixtures/old_resume_liuyang.docx"
+      ],
+      "assertions": [
+        "交付了可打开的 .docx（内部含 word/document.xml）",
+        "模块标题是主题色 #1F3864 底纹的色块且带通栏浅灰细线",
+        "列表用 Word 原生项目符号（w:numPr）而非手写圆点，悬挂缩进 340 缇",
+        "存在给用户过目的内容草稿（draft.md 或等价物）",
+        "保留了原简历里的公司名「深圳市某某科技有限公司」",
+        "旧简历的空话 bullet 没有原样保留（如「配合前端进行接口联调」「参与日常值班和故障排查」）",
+        "bullet 采用「主题词：」加粗前缀结构",
+        "草稿里明确点出了哪些量化数据是估算的"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "vague-metrics-with-job",
+      "prompt": "帮我做份简历，我做 Java 后端几年了，材料在 notes_chenrui.txt，想投 Java 后端工程师。有些事当时没记数据，你按合理的情况写就行，别太夸张。",
+      "expected_output": "有工作经历的简历，模块顺序为工作经历在前；把「快了不少」这类模糊描述转成保守可解释的量化结果，并在草稿里明确列出哪些数字是估算的",
+      "files": [
+        "evals/fixtures/notes_chenrui.txt"
+      ],
+      "assertions": [
+        "交付了可打开的 .docx（内部含 word/document.xml）",
+        "模块标题是主题色 #1F3864 底纹的色块且带通栏浅灰细线",
+        "列表用 Word 原生项目符号（w:numPr）而非手写圆点，悬挂缩进 340 缇",
+        "存在给用户过目的内容草稿（draft.md 或等价物）",
+        "工作经历模块排在教育经历之前",
+        "把「快了不少」这类模糊描述转成了带数字的量化结果",
+        "草稿里明确点出了哪些量化数据是估算的",
+        "没有出现「日常修 bug」式的空话 bullet"
+      ]
+    }
+  ]
+}

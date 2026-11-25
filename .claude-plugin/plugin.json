@@ -1,0 +1,16 @@
+{
+  "name": "resume-builder",
+  "version": "1.0.0",
+  "description": "中文简历制作：从零散经历、旧简历或目标岗位 JD 生成一页纸高密度 Word 简历，内置斜切色块标题版式与 Bullet 撰写公式。",
+  "author": {
+    "name": "zzzlip"
+  },
+  "keywords": [
+    "resume",
+    "cv",
+    "docx",
+    "简历",
+    "求职",
+    "jd"
+  ]
+}

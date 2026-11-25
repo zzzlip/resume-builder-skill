@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "resume-builder-skill",
+  "description": "中文简历制作 skill：一页纸高密度版式，纯标准库生成 .docx。",
+  "owner": {
+    "name": "zzzlip"
+  },
+  "plugins": [
+    {
+      "name": "resume-builder",
+      "source": "./",
+      "description": "把零散经历、旧简历或目标岗位 JD 做成可直接投递的中文 Word 简历。内置斜切色块标题、悬挂缩进列表、局部加粗规则，以及 Bullet 撰写公式和量化数据纪律。",
+      "author": {
+        "name": "zzzlip"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/zzzlip/resume-builder-skill"
+    }
+  ]
+}
